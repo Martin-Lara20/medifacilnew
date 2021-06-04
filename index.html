@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/cabecera.css">
+  <link rel="stylesheet" href="css/index.css">
+  <title>Pagina Inicial</title>
+</head>
+<body style="background: url(css/img/fondo.jpeg);">
+  <header>
+    <h1>MEDIFÁCIL</h1>
+    <nav>
+        <a href="#"><a href="objetivo.html">Objetivo</a></a>
+        <a href="#"><a href="num.html">Numeros de Emergencia</a></a>
+    </nav>
+  </header>
+
+    <div class="form1">
+      <form method="post">
+          <input align = "center" type="text" placeholder="Busca tu medicamento aquí" name="caja_busqueda" id="caja_busqueda"/>
+          <div class="estado">
+            <select name="Estado">
+              <option value="">Estado </option>
+              <?
+                while ($fila = $resultado->fetch_array()
+                {
+                  echo '<option value=</option>';
+                }
+              ?>
+            </select>
+          </div>
+          <div class="municipios">
+            <select name="municipio">
+              <option value="">Municipio</option>
+              <option value="limit 3">Nanchital</option>
+              <option value="limit 6">Coatzacoalcos</option>
+              <option value="limit 9">Ixhuatlan</option>
+            </select>
+          </div>
+          <button name="buscar" type="submit"><a href="info.php">Buscar</a></button>
+        </form>
+    </div>
+
+  <div class="logo">
+    <img src="css/img/MEDIFACIL.png"title="Medifacil"/>
+  </div>
+
+</body>
