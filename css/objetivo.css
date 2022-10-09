@@ -64,11 +64,14 @@ header nav a:hover{
 }
 .contenido {
     margin-top: 350px;
-    margin-left: 650px;
+    margin-left: 600px;
+    margin-right: 300px;
     position: absolute;
     text-align: justify;
+    width: 60%;
 }
 .contenido p{
     height: 10px;
     font-size: 30px;
+
 }
