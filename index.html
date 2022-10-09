@@ -1,49 +1,41 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/cabecera.css">
+  <link rel="stylesheet" href="css/w3c.css">
   <link rel="stylesheet" href="css/index.css">
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/main.js"></script>
   <title>Pagina Inicial</title>
 </head>
-<body style="background: url(css/img/fondo.jpeg);">
-  <header>
-    <h1>MEDIFÁCIL</h1>
-    <nav>
-        <a href="#"><a href="objetivo.html">Objetivo</a></a>
-        <a href="#"><a href="num.html">Numeros de Emergencia</a></a>
-    </nav>
-  </header>
+<body class="w3-sand">
+  <div class="w3-row">
+    <div class="w3-container w3-teal w3-center">
+      <h1>MEDIFÁCIL</h1>
+      <img src="img/MEDIFACIL.png" title="Medifacil" style="max-width:10%;"/>
+    </div>
+  </div>
+  <div class="w3-row w3-bar w3-light-green">
+    <a href="objetivo.html" class="w3-bar-item w3-button w3-mobile">Objetivo</a>
+    <a href="num.html" class="w3-bar-item w3-button w3-mobile">Numeros de Emergencia</a>
+    <a href="register/form.php" class="w3-bar-item w3-button w3-mobile">Registro</a>
+  </div>
 
-    <div class="form1">
-      <form method="post">
-          <input align = "center" type="text" placeholder="Busca tu medicamento aquí" name="caja_busqueda" id="caja_busqueda"/>
-          <div class="estado">
-            <select name="Estado">
-              <option value="">Estado </option>
-              <?
-                while ($fila = $resultado->fetch_array()
-                {
-                  echo '<option value=</option>';
-                }
-              ?>
-            </select>
-          </div>
-          <div class="municipios">
-            <select name="municipio">
-              <option value="">Municipio</option>
-              <option value="limit 3">Nanchital</option>
-              <option value="limit 6">Coatzacoalcos</option>
-              <option value="limit 9">Ixhuatlan</option>
-            </select>
-          </div>
-          <button name="buscar" type="submit"><a href="info.php">Buscar</a></button>
+  
+    <!-- <div class="logo">
+      <div class="w3-third w3-container">
+        <img src="img/MEDIFACIL.png" title="Medifacil" style="max-width:85%;"/>
+      </div>
+    </div> -->
+    <div class="w3-twothird w3-container w3-center" style="margin-top:15%; margin-left: 15%; margin-bottom: 30px;">
+      <form class="w3-container" method="post">
+          <input class="w3-input w3-border w3-round-medium" type="text" placeholder="Busca tu medicamento aquí" name="caja_busqueda" id="caja_busqueda"/>
+          <button class="w3-button w3-teal" style="margin-top: 10px;" name="buscar" type="button" onclick="buscarDatos()">Buscar</button>
         </form>
     </div>
 
-  <div class="logo">
-    <img src="css/img/MEDIFACIL.png"title="Medifacil"/>
-  </div>
+<div class="w3-row-padding" id="resultadoShow"></div>
 
 </body>

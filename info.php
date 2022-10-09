@@ -20,7 +20,7 @@
       
           <div class = "form 1-2">
               <label for = "caja_busqueda"> </label>
-              <input align="center" type="text" name="caja_busqueda" id="caja_busqueda" placeholder="Busca tu medicamento aquí"></input>
+              <input align ="center" type="text" name="caja_busqueda" id="caja_busqueda" placeholder="Busca tu medicamento aquí"></input>
           </div>
       </section>
 

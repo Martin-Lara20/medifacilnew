@@ -1,27 +1,18 @@
-$(buscar_datos());
 
-function buscar_datos(consulta){
-    $.ajax({
-        url: 'detalles.php',
-        type: 'POST',
-        dataType: 'html',
-        data:{consulta: consulta},
-    })
+function buscarDatos(){
+  var datoConsulta = $("#caja_busqueda").val();
 
-    .done(function(respuesta){
-        $("#datos").html(respuesta);
-    })
-
-    .fail(function(){
-        console.long("error");
-    })
+  $.ajax({
+    url: "detalles.php",
+    data: 'consulta='+datoConsulta,
+    dataType: "text",
+    method: "POST",
+    success: function(r){
+      $("#resultadoShow").html(r);
+    },
+    error: function(){
+      console.log("error");
+    }
+  });
 }
 
-$(document).on('keyup', '#caja_busqueda', function(){
-    var valor = $(this).val();
-    if(valor!= ""){
-        buscar_datos(valor);
-    } else {
-        buscar_datos();
-    }
-});
